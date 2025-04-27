@@ -332,7 +332,45 @@ function LandingPage() {
                 </Paper>
               </Box>
             </Box>
-
+            
+            <Box id="documents" sx={{ my: 4, px: 2 }}>
+            <Typography
+              variant="h4"
+              component="h2"
+              gutterBottom
+              sx={{
+                color: 'primary.main',
+                py: 3,
+                textAlign: 'center',
+              }}
+            >
+              Documents
+            </Typography>
+            <Box sx={{ display: 'flex', justifyContent: 'center', gap: 3 }}>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() => window.open('https://en.wikipedia.org/wiki/Business', '_blank')}
+              >
+                Business Foundation
+              </Button>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() => window.open('https://en.wikipedia.org/wiki/Product_design', '_blank')}
+              >
+                Product Design
+              </Button>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() => window.open('https://en.wikipedia.org/wiki/Pitch_(business)', '_blank')}
+              >
+                Pitch for Funding
+              </Button>
+            </Box>
+          </Box>
+          
             {/* Pricing Section */}
             <Box id="pricing" sx={{ my: 4 }}>
               <Typography
