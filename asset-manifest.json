@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/management-de-produs/static/css/main.be367da9.css",
-    "main.js": "/management-de-produs/static/js/main.4eed90d1.js",
+    "main.js": "/management-de-produs/static/js/main.06bd53ba.js",
     "static/js/453.72dcc9df.chunk.js": "/management-de-produs/static/js/453.72dcc9df.chunk.js",
     "static/media/lora-latin-400-normal.woff": "/management-de-produs/static/media/lora-latin-400-normal.945b9533957026c4896b.woff",
     "static/media/lora-latin-400-normal.woff2": "/management-de-produs/static/media/lora-latin-400-normal.bb84bcfe741b8f1b3e73.woff2",
@@ -34,11 +34,11 @@
     "static/media/roboto-slab-greek-ext-400-normal.woff2": "/management-de-produs/static/media/roboto-slab-greek-ext-400-normal.ab38b0d5c6cd5fbf22dc.woff2",
     "index.html": "/management-de-produs/index.html",
     "main.be367da9.css.map": "/management-de-produs/static/css/main.be367da9.css.map",
-    "main.4eed90d1.js.map": "/management-de-produs/static/js/main.4eed90d1.js.map",
+    "main.06bd53ba.js.map": "/management-de-produs/static/js/main.06bd53ba.js.map",
     "453.72dcc9df.chunk.js.map": "/management-de-produs/static/js/453.72dcc9df.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.be367da9.css",
-    "static/js/main.4eed90d1.js"
+    "static/js/main.06bd53ba.js"
   ]
 }
