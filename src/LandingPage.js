@@ -491,57 +491,68 @@ function LandingPage() {
         {/* Our team */}
         <Box
           sx={{
-            my: 4,
+            my: 8,
+            py: 8,
+            backgroundColor: 'primary.dark', 
+            color: 'white',
             textAlign: 'center',
-            backgroundColor: 'background.default',
-            p: 4,
           }}
         >
-          <Typography variant="h4" component="h2" gutterBottom>
-            Our team
-          </Typography>
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              flexWrap: 'wrap',
-              gap: 3,
-            }}
-          >
-            {[
-              { name: "Bina Mircea Marian", img: "Mircea.jpg" },
-              { name: "Cobzariu Emma-Elena", img: "Emma.jpg" },
-              { name: "Nacu Andrei-Emilian", img: "Nacu.jpg" },
-              { name: "Stoian Cosmin-Ionuț", img: "Cosmin.jpg" },
-              { name: "Strat Bogdan-Valentin", img: "Bogdan.jpg" },
-            ].map((member, index) => (
-              <Box
-                key={index}
-                sx={{
-                  textAlign: 'center',
-                  maxWidth: 150,
-                }}
-              >
+          <Container>
+            <Typography variant="h4" component="h2" gutterBottom>
+              Our Team
+            </Typography>
+
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                flexWrap: 'wrap',
+                gap: 6, 
+                mt: 6,
+              }}
+            >
+              {[
+                { name: "Bina Mircea Marian", img: "Mircea.jpg" },
+                { name: "Cobzariu Emma-Elena", img: "Emma.jpg" },
+                { name: "Nacu Andrei-Emilian", img: "Nacu.jpg" },
+                { name: "Stoian Cosmin-Ionuț", img: "Cosmin.jpg" },
+                { name: "Strat Bogdan-Valentin", img: "Bogdan.jpg" },
+              ].map((member, index) => (
                 <Box
-                  component="img"
-                  src={member.img}
-                  alt={member.name}
+                  key={index}
                   sx={{
-                    width: 100,
-                    height: 100,
-                    borderRadius: '50%',
-                    objectFit: 'cover',
-                    mb: 1,
-                    border: '2px solid #ccc',
+                    textAlign: 'center',
+                    width: 180,
+                    transition: 'transform 0.3s, box-shadow 0.3s',
+                    '&:hover': {
+                      transform: 'scale(1.1)', 
+                      boxShadow: 6, 
+                    },
                   }}
-                />
-                <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-                  {member.name}
-                </Typography>
-              </Box>
-            ))}
-          </Box>
+                >
+                  <Box
+                    component="img"
+                    src={member.img}
+                    alt={member.name}
+                    sx={{
+                      width: 120,
+                      height: 120,
+                      borderRadius: '50%',
+                      objectFit: 'cover',
+                      mb: 2,
+                      border: '3px solid white',
+                    }}
+                  />
+                  <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                    {member.name}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
+          </Container>
         </Box>
+
 
         {/* Sticky Footer */}
         <Box
