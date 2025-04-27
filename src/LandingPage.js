@@ -13,10 +13,14 @@ import {
   CardContent,
   IconButton,
   CssBaseline,
+  TextField,
 } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'; // Import the arrow icon
+import '@fontsource/lora'; // Professional serif font
+import '@fontsource/roboto-slab'; // Professional font
 
 function LandingPage() {
   const [mode, setMode] = useState('light');
@@ -24,6 +28,33 @@ function LandingPage() {
   const theme = createTheme({
     palette: {
       mode: mode,
+      primary: {
+        main: '#2c3e50', // Muted dark blue
+      },
+      secondary: {
+        main: '#8e44ad', // Purple for secondary color
+      },
+      accent: {
+        main: '#e67e22', // Orange for accent color
+      },
+    },
+    typography: {
+      fontFamily: "'Lora', 'Roboto Slab', serif", // Set professional fonts
+      h1: {
+        fontFamily: "'Lora', serif",
+      },
+      h2: {
+        fontFamily: "'Lora', serif",
+      },
+      h3: {
+        fontFamily: "'Roboto Slab', serif",
+      },
+      body1: {
+        fontFamily: "'Roboto Slab', serif",
+      },
+      body2: {
+        fontFamily: "'Roboto Slab', serif",
+      },
     },
   });
 
@@ -44,10 +75,10 @@ function LandingPage() {
         }}
       >
         {/* Sticky Header */}
-        <AppBar position="sticky">
+        <AppBar position="fixed" color="primary" top={0}>
           <Toolbar>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'left' }}>
-              My Application
+              UniGuide
             </Typography>
             <Button color="inherit" component={Link} href="#overview">
               Overview
@@ -55,8 +86,8 @@ function LandingPage() {
             <Button color="inherit" component={Link} href="#features">
               Features
             </Button>
-            <Button color="inherit" component={Link} href="#team">
-              Team
+            <Button color="inherit" component={Link} href="#swot">
+              SWOT Analysis
             </Button>
             <Button color="inherit" component={Link} href="#contact">
               Contact
@@ -67,155 +98,256 @@ function LandingPage() {
           </Toolbar>
         </AppBar>
 
+        {/* Hero Section */}
+        <Box
+          sx={{
+            position: 'relative',
+            height: '100vh',
+            backgroundImage: 'url(/header.jpg)', 
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: 'white',
+            textAlign: 'center',
+          }}
+        >
+          <Box
+            sx={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              backgroundColor: 'rgba(0, 0, 0, 0.7)', // Dark overlay
+              zIndex: 1,
+            }}
+          />
+          <Box sx={{ position: 'relative', zIndex: 2 }}>
+            <Typography variant="h3" component="h1" gutterBottom>
+              Welcome to UniGuide
+            </Typography>
+            <Typography variant="h6" paragraph>
+              Simplify your journey to finding the perfect university abroad.
+            </Typography>
+            <Button
+              variant="contained"
+              color="accent"
+              href="#contact"
+              sx={{ mt: 2 }}
+            >
+              Contact Us
+            </Button>
+          </Box>
+
+          {/* Down Arrow Animation */}
+          <Box
+            sx={{
+              position: 'absolute',
+              bottom: 16,
+              display: 'flex',
+              justifyContent: 'center',
+              width: '100%',
+              animation: 'bounce 2s infinite',
+            }}
+          >
+            <KeyboardArrowDownIcon
+              sx={{
+                fontSize: 100,
+                color: 'white',
+              }}
+            />
+          </Box>
+        </Box>
+
+        {/* Add keyframes for bounce animation */}
+        <style>
+          {`
+            @keyframes bounce {
+              0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+              }
+              40% {
+                transform: translateY(-10px);
+              }
+              60% {
+                transform: translateY(-5px);
+              }
+            }
+          `}
+        </style>
+
         {/* Main Content */}
         <Box sx={{ flexGrow: 1 }}>
           <Container>
-            {/* Overview Section */}
-            <Box id="overview" sx={{ my: 4 }}>
-              <Typography variant="h4" component="h1" gutterBottom>
-                Welcome to My Application
-              </Typography>
-              <Typography variant="body1" paragraph>
-                Our innovative platform is designed to revolutionize the market.
-                Discover how we are positioned to deliver breakthrough solutions that drive growth and capture investor interest.
-              </Typography>
-              <Button variant="contained" color="primary" href="/pitch">
-                Learn More
-              </Button>
-            </Box>
 
-            {/* Features Section */}
             <Box id="features" sx={{ my: 4 }}>
               <Typography variant="h4" component="h2" gutterBottom>
                 Key Features
               </Typography>
-              <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', flexWrap: 'wrap' }}>
-                <Paper sx={{ p: 2, m: 1, width: 300 }}>
+              <Box sx={{ 
+                display: 'flex', 
+                flexWrap: 'wrap', 
+                gap: 3,
+                justifyContent: 'center'
+              }}>
+                <Card sx={{ width: 300 }}>
+                  <CardMedia
+                    component="img"
+                    height="140"
+                    image="talking.jpg"
+                    alt="Personalized Recommendations"
+                  />
+                  <CardContent>
+                    <Typography variant="h5" component="h3">
+                      Personalized Recommendations
+                    </Typography>
+                    <Typography variant="body2">
+                      AI-powered chatbot provides tailored university recommendations based on your profile and preferences.
+                    </Typography>
+                  </CardContent>
+                </Card>
+
+                <Card sx={{ width: 300 }}>
+                  <CardMedia
+                    component="img"
+                    height="140"
+                    image="/management.jpg"
+                    alt="Shortlist Management"
+                  />
+                  <CardContent>
+                    <Typography variant="h5" component="h3">
+                      Shortlist Management
+                    </Typography>
+                    <Typography variant="body2">
+                      Add or remove universities from your shortlist and set alerts for application deadlines.
+                    </Typography>
+                  </CardContent>
+                </Card>
+
+                <Card sx={{ width: 300 }}>
+                  <CardMedia
+                    component="img"
+                    height="140"
+                    image="/students.jpg"
+                    alt="Student Connections"
+                  />
+                  <CardContent>
+                    <Typography variant="h5" component="h3">
+                      Student Connections
+                    </Typography>
+                    <Typography variant="body2">
+                      Connect with current students or alumni for insights and advice.
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Box>
+            </Box>
+
+            {/* SWOT Analysis Section */}
+            <Box id="swot" sx={{ my: 4 }}>
+              <Typography variant="h4" component="h2" gutterBottom>
+                SWOT Analysis
+              </Typography>
+              <Box sx={{ 
+                display: 'flex', 
+                flexWrap: 'wrap', 
+                gap: 3,
+                justifyContent: 'center'
+              }}>
+                <Paper sx={{ p: 2, width: 300 }}>
                   <Typography variant="h5" component="h3">
-                    Feature One
+                    Strengths
                   </Typography>
                   <Typography variant="body2">
-                    An overview of how feature one sets us apart.
+                    - Addresses a critical need for university selection assistance.<br />
+                    - Cost-effective and AI-driven.
                   </Typography>
-                  <Button variant="text" href="/feature-one">
-                    Read More
-                  </Button>
                 </Paper>
-                <Paper sx={{ p: 2, m: 1, width: 300 }}>
+
+                <Paper sx={{ p: 2, width: 300 }}>
                   <Typography variant="h5" component="h3">
-                    Feature Two
+                    Weaknesses
                   </Typography>
                   <Typography variant="body2">
-                    Explore the benefits of our second feature.
+                    - One-time use for university selection.<br />
+                    - Trust in AI vs. human interaction.
                   </Typography>
-                  <Button variant="text" href="/feature-two">
-                    Read More
-                  </Button>
                 </Paper>
-                <Paper sx={{ p: 2, m: 1, width: 300 }}>
+
+                <Paper sx={{ p: 2, width: 300 }}>
                   <Typography variant="h5" component="h3">
-                    Feature Three
+                    Opportunities
                   </Typography>
                   <Typography variant="body2">
-                    Learn how this feature drives our competitive edge.
+                    - Expand to offer consultancy for other profiles.<br />
+                    - Partnerships with scholarship institutions.
                   </Typography>
-                  <Button variant="text" href="/feature-three">
-                    Read More
-                  </Button>
+                </Paper>
+
+                <Paper sx={{ p: 2, width: 300 }}>
+                  <Typography variant="h5" component="h3">
+                    Threats
+                  </Typography>
+                  <Typography variant="body2">
+                    - Sudden changes in admission regulations.<br />
+                    - Competitors integrating similar AI solutions.
+                  </Typography>
                 </Paper>
               </Box>
             </Box>
 
-            {/* Team Section with Flexbox Row */}
-            <Box id="team" sx={{ my: 4 }}>
+            {/* Contact Form Section */}
+            <Box id="contact" sx={{ my: 4, px: 2 }}>
               <Typography variant="h4" component="h2" gutterBottom>
-                Meet the Team
+                Contact Us
               </Typography>
               <Box
+                component="form"
                 sx={{
                   display: 'flex',
-                  flexDirection: 'row',
-                  justifyContent: 'space-around',
-                  flexWrap: 'wrap',
+                  flexDirection: 'column',
+                  gap: 2,
+                  maxWidth: 500,
+                  mx: 'auto',
+                }}
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  alert('Thank you for reaching out! We will get back to you soon.');
                 }}
               >
-                {/* Team Member 1 */}
-                <Card sx={{ width: 300, height: 400, m: 2 }}>
-                  <CardMedia
-                    component="img"
-                    height="200"
-                    image="https://via.placeholder.com/300"
-                    alt="John Doe"
-                  />
-                  <CardContent>
-                    <Typography variant="h5" component="div">
-                      John Doe
-                    </Typography>
-                    <Typography variant="subtitle1" color="text.secondary">
-                      Chief Executive Officer
-                    </Typography>
-                    <Typography variant="body2" sx={{ mt: 1 }}>
-                      Achievements: Led the company to double its revenue and secured key partnerships.
-                    </Typography>
-                  </CardContent>
-                </Card>
-                {/* Team Member 2 */}
-                <Card sx={{ width: 300, height: 400, m: 2 }}>
-                  <CardMedia
-                    component="img"
-                    height="200"
-                    image="https://via.placeholder.com/300"
-                    alt="Jane Smith"
-                  />
-                  <CardContent>
-                    <Typography variant="h5" component="div">
-                      Jane Smith
-                    </Typography>
-                    <Typography variant="subtitle1" color="text.secondary">
-                      Chief Technology Officer
-                    </Typography>
-                    <Typography variant="body2" sx={{ mt: 1 }}>
-                      Achievements: Developed cutting-edge technology and built a robust development team.
-                    </Typography>
-                  </CardContent>
-                </Card>
-                {/* Team Member 3 */}
-                <Card sx={{ width: 300, height: 400, m: 2 }}>
-                  <CardMedia
-                    component="img"
-                    height="200"
-                    image="https://via.placeholder.com/300"
-                    alt="Alice Johnson"
-                  />
-                  <CardContent>
-                    <Typography variant="h5" component="div">
-                      Alice Johnson
-                    </Typography>
-                    <Typography variant="subtitle1" color="text.secondary">
-                      Chief Marketing Officer
-                    </Typography>
-                    <Typography variant="body2" sx={{ mt: 1 }}>
-                      Achievements: Launched award-winning campaigns and expanded the brand's global reach.
-                    </Typography>
-                  </CardContent>
-                </Card>
+                <TextField
+                  label="Name"
+                  variant="outlined"
+                  fullWidth
+                  required
+                />
+                <TextField
+                  label="Email"
+                  type="email"
+                  variant="outlined"
+                  fullWidth
+                  required
+                />
+                <TextField
+                  label="Message"
+                  variant="outlined"
+                  multiline
+                  rows={4}
+                  fullWidth
+                  required
+                />
+                <Button type="submit" variant="contained" color="primary">
+                  Submit
+                </Button>
               </Box>
             </Box>
 
-            {/* Contact Section */}
-            <Box id="contact" sx={{ my: 4 }}>
-              <Typography variant="h4" component="h2" gutterBottom>
-                Get in Touch
-              </Typography>
-              <Typography variant="body1" paragraph>
-                Interested in learning more or discussing investment opportunities? Reach out at{' '}
-                <Link href="mailto:info@example.com">info@example.com</Link>.
-              </Typography>
-            </Box>
           </Container>
         </Box>
 
-        {/* Sticky Footer with theme-aware colors */}
+        {/* Sticky Footer */}
         <Box
           component="footer"
           sx={{
@@ -226,7 +358,7 @@ function LandingPage() {
           }}
         >
           <Typography variant="body2">
-            © {new Date().getFullYear()} My Application. All rights reserved.
+            © {new Date().getFullYear()} UniGuide. All rights reserved.
           </Typography>
         </Box>
       </Box>
