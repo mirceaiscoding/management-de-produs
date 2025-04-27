@@ -186,7 +186,15 @@ function LandingPage() {
           <Container>
 
             <Box id="features" sx={{ my: 4 }}>
-              <Typography variant="h4" component="h2" gutterBottom>
+              <Typography
+                variant="h4"
+                component="h2"
+                gutterBottom
+                sx={{
+                  color: 'primary.main', // Use primary color
+                  py: 3, // Add more vertical padding
+                }}
+              >
                 Key Features
               </Typography>
               <Box sx={{ 
@@ -250,20 +258,35 @@ function LandingPage() {
 
             {/* SWOT Analysis Section */}
             <Box id="swot" sx={{ my: 4 }}>
-              <Typography variant="h4" component="h2" gutterBottom>
-                SWOT Analysis
+              <Typography
+                variant="h4"
+                component="h2"
+                gutterBottom
+                sx={{
+                  color: 'primary.main', // Use primary color
+                  py: 3, // Add more vertical padding
+                  textAlign: 'center', // Center-align the header
+                  fontWeight: 'bold', // Make the text bold
+                }}
+              >
+                <strong>SWOT Analysis</strong>
               </Typography>
-              <Box sx={{ 
-                display: 'flex', 
-                flexWrap: 'wrap', 
-                gap: 3,
-                justifyContent: 'center'
-              }}>
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: 3,
+                  justifyContent: 'center',
+                }}
+              >
                 <Paper sx={{ p: 2, width: 300 }}>
                   <Typography variant="h5" component="h3">
-                    Strengths
+                    💪 <strong>Strengths</strong>
                   </Typography>
-                  <Typography variant="body2">
+                  <Typography
+                    variant="body2"
+                    sx={{ textAlign: 'left' }} // Justify list items to the left
+                  >
                     - Addresses a critical need for university selection assistance.<br />
                     - Cost-effective and AI-driven.
                   </Typography>
@@ -271,9 +294,12 @@ function LandingPage() {
 
                 <Paper sx={{ p: 2, width: 300 }}>
                   <Typography variant="h5" component="h3">
-                    Weaknesses
+                    🛠 <strong>Weaknesses</strong>
                   </Typography>
-                  <Typography variant="body2">
+                  <Typography
+                    variant="body2"
+                    sx={{ textAlign: 'left' }} // Justify list items to the left
+                  >
                     - One-time use for university selection.<br />
                     - Trust in AI vs. human interaction.
                   </Typography>
@@ -281,9 +307,12 @@ function LandingPage() {
 
                 <Paper sx={{ p: 2, width: 300 }}>
                   <Typography variant="h5" component="h3">
-                    Opportunities
+                    🌟 <strong>Opportunities</strong>
                   </Typography>
-                  <Typography variant="body2">
+                  <Typography
+                    variant="body2"
+                    sx={{ textAlign: 'left' }} // Justify list items to the left
+                  >
                     - Expand to offer consultancy for other profiles.<br />
                     - Partnerships with scholarship institutions.
                   </Typography>
@@ -291,9 +320,12 @@ function LandingPage() {
 
                 <Paper sx={{ p: 2, width: 300 }}>
                   <Typography variant="h5" component="h3">
-                    Threats
+                    ⚠️ <strong>Threats</strong>
                   </Typography>
-                  <Typography variant="body2">
+                  <Typography
+                    variant="body2"
+                    sx={{ textAlign: 'left' }} // Justify list items to the left
+                  >
                     - Sudden changes in admission regulations.<br />
                     - Competitors integrating similar AI solutions.
                   </Typography>
@@ -303,8 +335,18 @@ function LandingPage() {
 
             {/* Pricing Section */}
             <Box id="pricing" sx={{ my: 4 }}>
-              <Typography variant="h4" component="h2" gutterBottom>
-                Pricing
+              <Typography
+                variant="h4"
+                component="h2"
+                gutterBottom
+                sx={{
+                  color: 'primary.main', // Use primary color
+                  py: 3, // Add more vertical padding
+                  textAlign: 'center', // Center-align the header
+                  fontWeight: 'bold', // Make the text bold
+                }}
+              >
+                <strong>Pricing</strong>
               </Typography>
               <Box
                 sx={{
@@ -342,7 +384,7 @@ function LandingPage() {
                         py: 2, // Add vertical padding inside the header
                       }}
                     >
-                      7 Day Free Trial
+                      <strong>7 Day Free Trial</strong>
                     </Typography>
                     <Box sx={{ p: 2, flexGrow: 1 }}>
                       <Typography variant="body2" paragraph>
@@ -398,7 +440,7 @@ function LandingPage() {
                         py: 2, // Add vertical padding inside the header
                       }}
                     >
-                      Premium Membership
+                      <strong>Premium Membership</strong>
                     </Typography>
                     <Box sx={{ p: 2, flexGrow: 1 }}>
                       <Typography variant="body2" paragraph>
@@ -441,7 +483,15 @@ function LandingPage() {
 
             {/* Contact Form Section */}
             <Box id="contact" sx={{ my: 4, px: 2 }}>
-              <Typography variant="h4" component="h2" gutterBottom>
+              <Typography
+                variant="h4"
+                component="h2"
+                gutterBottom
+                sx={{
+                  color: 'primary.main', // Use primary color
+                  py: 3, // Add more vertical padding
+                }}
+              >
                 Contact Us
               </Typography>
               <Box
