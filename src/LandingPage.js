@@ -203,15 +203,15 @@ function LandingPage() {
                 gap: 3,
                 justifyContent: 'center'
               }}>
-                <Card sx={{ width: 300 }}>
+                <Card sx={{ width: 300, height: 400 }}>
                   <CardMedia
                     component="img"
-                    height="140"
+                    height="200"
                     image="talking.jpg"
                     alt="Personalized Recommendations"
                   />
                   <CardContent>
-                    <Typography variant="h5" component="h3">
+                    <Typography variant="h5" component="h3" minHeight={60} gutterBottom>
                       Personalized Recommendations
                     </Typography>
                     <Typography variant="body2">
@@ -220,15 +220,15 @@ function LandingPage() {
                   </CardContent>
                 </Card>
 
-                <Card sx={{ width: 300 }}>
+                <Card sx={{ width: 300, height: 400 }}>
                   <CardMedia
                     component="img"
-                    height="140"
+                    height="200"
                     image="/management.jpg"
                     alt="Shortlist Management"
                   />
                   <CardContent>
-                    <Typography variant="h5" component="h3">
+                    <Typography variant="h5" component="h3" minHeight={60} gutterBottom>
                       Shortlist Management
                     </Typography>
                     <Typography variant="body2">
@@ -237,15 +237,15 @@ function LandingPage() {
                   </CardContent>
                 </Card>
 
-                <Card sx={{ width: 300 }}>
+                <Card sx={{ width: 300, height: 400 }}>
                   <CardMedia
                     component="img"
-                    height="140"
+                    height="200"
                     image="/students.jpg"
                     alt="Student Connections"
                   />
                   <CardContent>
-                    <Typography variant="h5" component="h3">
+                    <Typography variant="h5" component="h3" minHeight={60} gutterBottom>
                       Student Connections
                     </Typography>
                     <Typography variant="body2">
