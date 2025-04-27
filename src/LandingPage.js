@@ -14,11 +14,14 @@ import {
   IconButton,
   CssBaseline,
   TextField,
+  List,
+  ListItem,
 } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'; // Import the arrow icon
+import CheckIcon from '@mui/icons-material/Check'; // Import the checkmark icon
 import '@fontsource/lora'; // Professional serif font
 import '@fontsource/roboto-slab'; // Professional font
 
@@ -295,6 +298,144 @@ function LandingPage() {
                     - Competitors integrating similar AI solutions.
                   </Typography>
                 </Paper>
+              </Box>
+            </Box>
+
+            {/* Pricing Section */}
+            <Box id="pricing" sx={{ my: 4 }}>
+              <Typography variant="h4" component="h2" gutterBottom>
+                Pricing
+              </Typography>
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: 3,
+                  justifyContent: 'center',
+                  alignItems: 'stretch', // Ensures all cards align to the same height
+                }}
+              >
+                {/* Free Trial Card */}
+                <Card
+                  sx={{
+                    maxWidth: 300, // Explicitly set the maximum width
+                    textAlign: 'center',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    flex: 1, // Ensures the card stretches to match the height of others
+                  }}
+                >
+                  <CardContent
+                    sx={{
+                      p: 0, // Remove padding
+                      display: 'flex',
+                      flexDirection: 'column',
+                      flexGrow: 1, // Ensures content stretches to fill the card
+                    }}
+                  >
+                    <Typography
+                      variant="h5"
+                      component="h3"
+                      sx={{
+                        backgroundColor: 'primary.main',
+                        color: 'white',
+                        py: 2, // Add vertical padding inside the header
+                      }}
+                    >
+                      7 Day Free Trial
+                    </Typography>
+                    <Box sx={{ p: 2, flexGrow: 1 }}>
+                      <Typography variant="body2" paragraph>
+                        Get started with a 7-day free trial. Explore all features and see how UniGuide can help you.
+                      </Typography>
+                      <List>
+                        <ListItem>
+                          <CheckIcon sx={{ color: 'primary.main', mr: 1 }} />
+                          Access to basic features
+                        </ListItem>
+                        <ListItem>
+                          <CheckIcon sx={{ color: 'primary.main', mr: 1 }} />
+                          Personalized recommendations
+                        </ListItem>
+                        <ListItem>
+                          <CheckIcon sx={{ color: 'primary.main', mr: 1 }} />
+                          Limited shortlist management
+                        </ListItem>
+                      </List>
+                    </Box>
+                    <Box sx={{ p: 2 }}>
+                      <Button variant="contained" color="primary" href="#contact">
+                        Start Free Trial
+                      </Button>
+                    </Box>
+                  </CardContent>
+                </Card>
+
+                {/* Premium Membership Card */}
+                <Card
+                  sx={{
+                    maxWidth: 300, // Explicitly set the maximum width
+                    textAlign: 'center',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    flex: 1, // Ensures the card stretches to match the height of others
+                  }}
+                >
+                  <CardContent
+                    sx={{
+                      p: 0, // Remove padding
+                      display: 'flex',
+                      flexDirection: 'column',
+                      flexGrow: 1, // Ensures content stretches to fill the card
+                    }}
+                  >
+                    <Typography
+                      variant="h5"
+                      component="h3"
+                      sx={{
+                        backgroundColor: 'primary.main',
+                        color: 'white',
+                        py: 2, // Add vertical padding inside the header
+                      }}
+                    >
+                      Premium Membership
+                    </Typography>
+                    <Box sx={{ p: 2, flexGrow: 1 }}>
+                      <Typography variant="body2" paragraph>
+                        Unlock all features for just €10 per month. Enjoy personalized recommendations, shortlist management, and more.
+                      </Typography>
+                      <List>
+                        <ListItem>
+                          <CheckIcon sx={{ color: 'accent.main', mr: 1 }} />
+                          Unlimited access to all features
+                        </ListItem>
+                        <ListItem>
+                          <CheckIcon sx={{ color: 'accent.main', mr: 1 }} />
+                          Advanced shortlist management
+                        </ListItem>
+                        <ListItem>
+                          <CheckIcon sx={{ color: 'accent.main', mr: 1 }} />
+                          Priority support
+                        </ListItem>
+                      </List>
+                    </Box>
+                    <Box sx={{ p: 2 }}>
+                      <Typography variant="h6" color="accent" gutterBottom>
+                        €10/month
+                      </Typography>
+                      <Button
+                        variant="contained"
+                        color="accent"
+                        href="#contact"
+                        sx={{
+                          color: 'white', // Set the button text color to white
+                        }}
+                      >
+                        Subscribe Now
+                      </Button>
+                    </Box>
+                  </CardContent>
+                </Card>
               </Box>
             </Box>
 
