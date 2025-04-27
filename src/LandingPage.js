@@ -79,27 +79,33 @@ function LandingPage() {
       >
         {/* Sticky Header */}
         <AppBar position="fixed" color="primary" top={0}>
-          <Toolbar>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'left' }}>
-              UniGuide
-            </Typography>
-            <Button color="inherit" component={Link} href="#overview">
-              Overview
-            </Button>
-            <Button color="inherit" component={Link} href="#features">
-              Features
-            </Button>
-            <Button color="inherit" component={Link} href="#swot">
-              SWOT Analysis
-            </Button>
-            <Button color="inherit" component={Link} href="#contact">
-              Contact
-            </Button>
-            <IconButton sx={{ ml: 1 }} onClick={toggleTheme} color="inherit">
-              {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-            </IconButton>
-          </Toolbar>
-        </AppBar>
+        <Toolbar>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'left' }}>
+            UniGuide
+          </Typography>
+          <Button color="inherit" component={Link} href="#features">
+            Features
+          </Button>
+          <Button color="inherit" component={Link} href="#swot">
+            SWOT Analysis
+          </Button>
+          <Button color="inherit" component={Link} href="#documents">
+            Documents
+          </Button>
+          <Button color="inherit" component={Link} href="#pricing">
+            Pricing
+          </Button>
+          <Button color="inherit" component={Link} href="#contact">
+            Contact
+          </Button>
+          <Button color="inherit" component={Link} href="#team">
+            Team
+          </Button>
+          <IconButton sx={{ ml: 1 }} onClick={toggleTheme} color="inherit">
+            {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+          </IconButton>
+        </Toolbar>
+      </AppBar>
 
         {/* Hero Section */}
         <Box
@@ -185,7 +191,10 @@ function LandingPage() {
         <Box sx={{ flexGrow: 1 }}>
           <Container>
 
-            <Box id="features" sx={{ my: 4 }}>
+          <Box id="features" />
+          {/* Invisible Spacer */}
+          <Box sx={{ height: '32px' }} />
+          <Box sx={{ my: 4 }}>
               <Typography
                 variant="h4"
                 component="h2"
@@ -257,6 +266,9 @@ function LandingPage() {
             </Box>
 
             {/* SWOT Analysis Section */}
+            <Box id="swot" />
+            {/* Invisible Spacer */}
+            <Box sx={{ height: '32px' }} />
             <Box id="swot" sx={{ my: 4, maxWidth: 700, mx: 'auto' }}>
               <Typography
                 variant="h4"
@@ -333,7 +345,10 @@ function LandingPage() {
               </Box>
             </Box>
             
-            <Box id="documents" sx={{ my: 4, px: 2 }}>
+            <Box id="documents" />
+            {/* Invisible Spacer */}
+            <Box sx={{ height: '32px' }} />
+            <Box sx={{ my: 4, px: 2 }}>
             <Typography
               variant="h4"
               component="h2"
@@ -350,29 +365,32 @@ function LandingPage() {
               <Button
                 variant="contained"
                 color="primary"
-                onClick={() => window.open('https://en.wikipedia.org/wiki/Business', '_blank')}
+                onClick={() => window.open('https://docs.google.com/document/d/1dgIDF5iQsmtxmS8xCUFhyySj7PZHdM34uR-fggwetVc/edit?usp=sharing', '_blank')}
               >
                 Business Foundation
               </Button>
               <Button
                 variant="contained"
                 color="primary"
-                onClick={() => window.open('https://en.wikipedia.org/wiki/Product_design', '_blank')}
+                onClick={() => window.open('https://www.figma.com/proto/12B1CwTQlLG2ghzbrm4aTx/UniGuide?node-id=2-2&t=NY3hkI1ytEZvCRFR-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=50%3A844', '_blank')}
               >
                 Product Design
               </Button>
               <Button
                 variant="contained"
                 color="primary"
-                onClick={() => window.open('https://en.wikipedia.org/wiki/Pitch_(business)', '_blank')}
+                onClick={() => window.open('https://docs.google.com/presentation/d/1iJ_gY8AYW1MAfAIpR3uNwyEtYRZxJJKd/edit?usp=sharing&ouid=113710230882758090956&rtpof=true&sd=true', '_blank')}
               >
                 Pitch for Funding
               </Button>
             </Box>
           </Box>
-          
+
             {/* Pricing Section */}
-            <Box id="pricing" sx={{ my: 4 }}>
+            <Box id="pricing"/>
+            {/* Invisible Spacer */}
+            <Box sx={{ height: '32px' }} />
+            <Box sx={{ my: 4 }}>
               <Typography
                 variant="h4"
                 component="h2"
@@ -520,6 +538,9 @@ function LandingPage() {
             </Box>
 
             {/* Contact Form Section */}
+            <Box id="contact" />
+            {/* Invisible Spacer */}
+            <Box sx={{ height: '32px' }} />
             <Box id="contact" sx={{ my: 4, px: 2 }}>
               <Typography
                 variant="h4"
@@ -578,6 +599,7 @@ function LandingPage() {
         
         {/* Our team */}
         <Box
+          id="team"
           sx={{
             my: 8,
             py: 8,
