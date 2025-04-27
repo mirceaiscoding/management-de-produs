@@ -487,7 +487,61 @@ function LandingPage() {
 
           </Container>
         </Box>
-
+        
+        {/* Echipa noastra */}
+        <Box
+          sx={{
+            my: 4,
+            textAlign: 'center',
+            backgroundColor: 'background.default',
+            p: 4,
+          }}
+        >
+          <Typography variant="h4" component="h2" gutterBottom>
+            Echipa noastră
+          </Typography>
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              flexWrap: 'wrap',
+              gap: 3,
+            }}
+          >
+            {[
+              { name: "Ion Popescu", img: "header.jpg" },
+              { name: "Maria Ionescu", img: "header.jpg" },
+              { name: "Andrei Vasilescu", img: "header.jpg" },
+              { name: "Elena Georgescu", img: "header.jpg" },
+              { name: "Cristian Dumitru", img: "header.jpg" },
+            ].map((member, index) => (
+              <Box
+                key={index}
+                sx={{
+                  textAlign: 'center',
+                  maxWidth: 150,
+                }}
+              >
+                <Box
+                  component="img"
+                  src={member.img}
+                  alt={member.name}
+                  sx={{
+                    width: 100,
+                    height: 100,
+                    borderRadius: '50%',
+                    objectFit: 'cover',
+                    mb: 1,
+                    border: '2px solid #ccc',
+                  }}
+                />
+                <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                  {member.name}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
+        </Box>        
         {/* Sticky Footer */}
         <Box
           component="footer"
