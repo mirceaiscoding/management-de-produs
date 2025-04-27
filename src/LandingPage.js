@@ -257,7 +257,7 @@ function LandingPage() {
             </Box>
 
             {/* SWOT Analysis Section */}
-            <Box id="swot" sx={{ my: 4 }}>
+            <Box id="swot" sx={{ my: 4, maxWidth: 700, mx: 'auto' }}>
               <Typography
                 variant="h4"
                 component="h2"
@@ -280,7 +280,7 @@ function LandingPage() {
                 }}
               >
                 <Paper sx={{ p: 2, width: 300 }}>
-                  <Typography variant="h5" component="h3">
+                  <Typography variant="h5" component="h3" gutterBottom>
                     💪 <strong>Strengths</strong>
                   </Typography>
                   <Typography
@@ -293,7 +293,7 @@ function LandingPage() {
                 </Paper>
 
                 <Paper sx={{ p: 2, width: 300 }}>
-                  <Typography variant="h5" component="h3">
+                  <Typography variant="h5" component="h3" gutterBottom>
                     🛠 <strong>Weaknesses</strong>
                   </Typography>
                   <Typography
@@ -306,7 +306,7 @@ function LandingPage() {
                 </Paper>
 
                 <Paper sx={{ p: 2, width: 300 }}>
-                  <Typography variant="h5" component="h3">
+                  <Typography variant="h5" component="h3" gutterBottom>
                     🌟 <strong>Opportunities</strong>
                   </Typography>
                   <Typography
@@ -319,7 +319,7 @@ function LandingPage() {
                 </Paper>
 
                 <Paper sx={{ p: 2, width: 300 }}>
-                  <Typography variant="h5" component="h3">
+                  <Typography variant="h5" component="h3" gutterBottom>
                     ⚠️ <strong>Threats</strong>
                   </Typography>
                   <Typography
