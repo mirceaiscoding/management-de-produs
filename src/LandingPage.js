@@ -488,7 +488,7 @@ function LandingPage() {
           </Container>
         </Box>
         
-        {/* Echipa noastra */}
+        {/* Our team */}
         <Box
           sx={{
             my: 4,
@@ -498,7 +498,7 @@ function LandingPage() {
           }}
         >
           <Typography variant="h4" component="h2" gutterBottom>
-            Echipa noastră
+            Our team
           </Typography>
           <Box
             sx={{
@@ -509,11 +509,11 @@ function LandingPage() {
             }}
           >
             {[
-              { name: "Ion Popescu", img: "header.jpg" },
-              { name: "Maria Ionescu", img: "header.jpg" },
-              { name: "Andrei Vasilescu", img: "header.jpg" },
-              { name: "Elena Georgescu", img: "header.jpg" },
-              { name: "Cristian Dumitru", img: "header.jpg" },
+              { name: "Bina Mircea Marian", img: "Mircea.jpg" },
+              { name: "Cobzariu Emma-Elena", img: "Emma.jpg" },
+              { name: "Nacu Andrei-Emilian", img: "Nacu.jpg" },
+              { name: "Stoian Cosmin-Ionuț", img: "Cosmin.jpg" },
+              { name: "Strat Bogdan-Valentin", img: "Bogdan.jpg" },
             ].map((member, index) => (
               <Box
                 key={index}
@@ -541,7 +541,8 @@ function LandingPage() {
               </Box>
             ))}
           </Box>
-        </Box>        
+        </Box>
+
         {/* Sticky Footer */}
         <Box
           component="footer"
