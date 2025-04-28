@@ -27,9 +27,13 @@ import '@fontsource/roboto-slab'; // Professional font
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
 function LandingPage() {
   const [mode, setMode] = useState('light');
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
 
   const theme = createTheme({
     palette: {
@@ -86,6 +90,19 @@ function LandingPage() {
     '/figma5.png',
   ];
 
+  const handleMenuClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleDocumentClick = (url) => {
+    window.open(url, '_blank');
+    handleMenuClose();
+  };
+  
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -99,29 +116,48 @@ function LandingPage() {
         }}
       >
         {/* Sticky Header */}
-        <AppBar position="fixed" color="primary" top={0}>
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'left' }}>
-            UniGuide
-          </Typography>
-          <Button color="inherit" component={Link} href="#features">
-            Features
-          </Button>
-          <Button color="inherit" component={Link} href="#showcase">
-            App Showcase
-          </Button>
-          <Button color="inherit" component={Link} href="#documents">
-            Documents
-          </Button>
-          <Button color="inherit" component={Link} href="#pricing">
-            Pricing
-          </Button>
-          <Button color="inherit" component={Link} href="#contact">
-            Contact
-          </Button>
-          <Button color="inherit" component={Link} href="#team">
-            Team
-          </Button>
+        <AppBar position="fixed" color="primary">
+          <Toolbar>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'left' }}>
+              UniGuide
+            </Typography>
+            <Button color="inherit" href="#features">
+              Features
+            </Button>
+            <Button color="inherit" href="#showcase">
+              App Showcase
+            </Button>
+            <Button
+              color="inherit"
+              onClick={handleMenuClick}
+              endIcon={<KeyboardArrowDownIcon />}
+            >
+              Documents
+            </Button>
+            <Menu
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleMenuClose}
+            >
+              <MenuItem onClick={() => handleDocumentClick('https://docs.google.com/document/d/1dgIDF5iQsmtxmS8xCUFhyySj7PZHdM34uR-fggwetVc/edit?usp=sharing')}>
+                Business Foundation
+              </MenuItem>
+              <MenuItem onClick={() => handleDocumentClick('https://www.figma.com/proto/12B1CwTQlLG2ghzbrm4aTx/UniGuide?node-id=2-2&t=NY3hkI1ytEZvCRFR-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=50%3A844')}>
+                Product Design
+              </MenuItem>
+              <MenuItem onClick={() => handleDocumentClick('https://docs.google.com/presentation/d/1iJ_gY8AYW1MAfAIpR3uNwyEtYRZxJJKd/edit?usp=sharing&ouid=113710230882758090956&rtpof=true&sd=true')}>
+                Pitch for Funding
+              </MenuItem>
+            </Menu>
+            <Button color="inherit" href="#pricing">
+              Pricing
+            </Button>
+            <Button color="inherit" href="#contact">
+              Contact
+            </Button>
+            <Button color="inherit" href="#team">
+              Team
+            </Button>
           <IconButton sx={{ ml: 1 }} onClick={toggleTheme} color="inherit">
             {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
           </IconButton>
@@ -286,6 +322,7 @@ function LandingPage() {
               </Box>
             </Box>
             
+            
             {/* App Showcase Section */}
             <Box id="showcase"/>
             {/* Invisible Spacer */}
@@ -326,47 +363,30 @@ function LandingPage() {
               </Box>
             </Box>
             
-            <Box id="documents" />
-            {/* Invisible Spacer */}
-            <Box sx={{ height: '32px' }} />
-            <Box sx={{ my: 4, px: 2 }}>
-            <Typography
-              variant="h4"
-              component="h2"
-              gutterBottom
+            {/* Download the App Section */}
+          <Box
               sx={{
-                color: 'primary.main',
-                py: 3,
+                my: 8,
                 textAlign: 'center',
+                backgroundColor: 'primary.light',
+                color: 'white',
+                py: 4,
+                borderRadius: 2,
               }}
             >
-              Documents
-            </Typography>
-            <Box sx={{ display: 'flex', justifyContent: 'center', gap: 3 }}>
+              <Typography variant="h5" gutterBottom>
+                Download the App Now!
+              </Typography>
               <Button
                 variant="contained"
-                color="primary"
-                onClick={() => window.open('https://docs.google.com/document/d/1dgIDF5iQsmtxmS8xCUFhyySj7PZHdM34uR-fggwetVc/edit?usp=sharing', '_blank')}
+                color="accent"
+                href="https://example.com/download"
+                sx={{ mt: 2 }}
               >
-                Business Foundation
-              </Button>
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={() => window.open('https://www.figma.com/proto/12B1CwTQlLG2ghzbrm4aTx/UniGuide?node-id=2-2&t=NY3hkI1ytEZvCRFR-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=50%3A844', '_blank')}
-              >
-                Product Design
-              </Button>
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={() => window.open('https://docs.google.com/presentation/d/1iJ_gY8AYW1MAfAIpR3uNwyEtYRZxJJKd/edit?usp=sharing&ouid=113710230882758090956&rtpof=true&sd=true', '_blank')}
-              >
-                Pitch for Funding
+                Get the App
               </Button>
             </Box>
-          </Box>
-
+            
             {/* Pricing Section */}
             <Box id="pricing"/>
             {/* Invisible Spacer */}
