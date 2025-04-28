@@ -24,6 +24,9 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'; // Im
 import CheckIcon from '@mui/icons-material/Check'; // Import the checkmark icon
 import '@fontsource/lora'; // Professional serif font
 import '@fontsource/roboto-slab'; // Professional font
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from 'react-slick';
 
 function LandingPage() {
   const [mode, setMode] = useState('light');
@@ -65,6 +68,24 @@ function LandingPage() {
     setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
   };
 
+  const sliderSettings = {
+    dots: true, 
+    infinite: true, 
+    speed: 500, 
+    slidesToShow: 1, 
+    slidesToScroll: 1, 
+    autoplay: true, 
+    autoplaySpeed: 3000, 
+  };
+
+  const appImages = [
+    '/figma1.png', 
+    '/figma2.png', 
+    '/figma3.png',
+    '/figma4.png',
+    '/figma5.png',
+  ];
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -86,8 +107,8 @@ function LandingPage() {
           <Button color="inherit" component={Link} href="#features">
             Features
           </Button>
-          <Button color="inherit" component={Link} href="#swot">
-            SWOT Analysis
+          <Button color="inherit" component={Link} href="#showcase">
+            App Showcase
           </Button>
           <Button color="inherit" component={Link} href="#documents">
             Documents
@@ -264,84 +285,44 @@ function LandingPage() {
                 </Card>
               </Box>
             </Box>
-
-            {/* SWOT Analysis Section */}
-            <Box id="swot" />
+            
+            {/* App Showcase Section */}
+            <Box id="showcase"/>
             {/* Invisible Spacer */}
             <Box sx={{ height: '32px' }} />
-            <Box id="swot" sx={{ my: 4, maxWidth: 700, mx: 'auto' }}>
+            <Box sx={{ my: 2 }}></Box>
+            <Box sx={{ my: 8, textAlign: 'center' }}>
               <Typography
                 variant="h4"
                 component="h2"
                 gutterBottom
                 sx={{
-                  color: 'primary.main', // Use primary color
-                  py: 3, // Add more vertical padding
-                  textAlign: 'center', // Center-align the header
-                  fontWeight: 'bold', // Make the text bold
+                  color: 'primary.main',
+                  fontWeight: 'bold',
+                  py: 3,
                 }}
               >
-                <strong>SWOT Analysis</strong>
+                App Showcase
               </Typography>
-              <Box
-                sx={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  gap: 3,
-                  justifyContent: 'center',
-                }}
-              >
-                <Paper sx={{ p: 2, width: 300 }}>
-                  <Typography variant="h5" component="h3" gutterBottom>
-                    💪 <strong>Strengths</strong>
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{ textAlign: 'left' }} // Justify list items to the left
-                  >
-                    - Addresses a critical need for university selection assistance.<br />
-                    - Cost-effective and AI-driven.
-                  </Typography>
-                </Paper>
-
-                <Paper sx={{ p: 2, width: 300 }}>
-                  <Typography variant="h5" component="h3" gutterBottom>
-                    🛠 <strong>Weaknesses</strong>
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{ textAlign: 'left' }} // Justify list items to the left
-                  >
-                    - One-time use for university selection.<br />
-                    - Trust in AI vs. human interaction.
-                  </Typography>
-                </Paper>
-
-                <Paper sx={{ p: 2, width: 300 }}>
-                  <Typography variant="h5" component="h3" gutterBottom>
-                    🌟 <strong>Opportunities</strong>
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{ textAlign: 'left' }} // Justify list items to the left
-                  >
-                    - Expand to offer consultancy for other profiles.<br />
-                    - Partnerships with scholarship institutions.
-                  </Typography>
-                </Paper>
-
-                <Paper sx={{ p: 2, width: 300 }}>
-                  <Typography variant="h5" component="h3" gutterBottom>
-                    ⚠️ <strong>Threats</strong>
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{ textAlign: 'left' }} // Justify list items to the left
-                  >
-                    - Sudden changes in admission regulations.<br />
-                    - Competitors integrating similar AI solutions.
-                  </Typography>
-                </Paper>
+              <Box sx={{ maxWidth: 300, mx: 'auto', position: 'relative' }}>
+                <Slider {...sliderSettings}>
+                  {appImages.map((image, index) => (
+                    <Box key={index} sx={{ px: 2 }}>
+                      <Box
+                        component="img"
+                        src={image}
+                        alt={`App Mockup ${index + 1}`}
+                        sx={{
+                          width: '100%',
+                          height: 'auto',
+                          borderRadius: 2,
+                          boxShadow: 3,
+                          objectFit: 'contain', // Ensures the image fits within the container
+                        }}
+                      />
+                    </Box>
+                  ))}
+                </Slider>
               </Box>
             </Box>
             
