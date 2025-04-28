@@ -83,11 +83,11 @@ function LandingPage() {
   };
 
   const appImages = [
-    '/figma1.png', 
-    '/figma2.png', 
-    '/figma3.png',
-    '/figma4.png',
-    '/figma5.png',
+    'images/figma1.png', 
+    'images/figma2.png', 
+    'images/figma3.png',
+    'images/figma4.png',
+    'images/figma5.png',
   ];
 
   const handleMenuClick = (event) => {
@@ -169,7 +169,7 @@ function LandingPage() {
           sx={{
             position: 'relative',
             height: '100vh',
-            backgroundImage: 'url(/header.jpg)', 
+            backgroundImage: 'url(images/header.jpg)', 
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             display: 'flex',
@@ -273,7 +273,7 @@ function LandingPage() {
                   <CardMedia
                     component="img"
                     height="200"
-                    image="talking.jpg"
+                    image="images/talking.jpg"
                     alt="Personalized Recommendations"
                   />
                   <CardContent>
@@ -290,7 +290,7 @@ function LandingPage() {
                   <CardMedia
                     component="img"
                     height="200"
-                    image="/management.jpg"
+                    image="images/management.jpg"
                     alt="Shortlist Management"
                   />
                   <CardContent>
@@ -307,7 +307,7 @@ function LandingPage() {
                   <CardMedia
                     component="img"
                     height="200"
-                    image="/students.jpg"
+                    image="images/students2.jpg"
                     alt="Student Connections"
                   />
                   <CardContent>
@@ -624,11 +624,11 @@ function LandingPage() {
               }}
             >
               {[
-                { name: "Bina Mircea Marian", img: "Mircea.jpg" },
-                { name: "Cobzariu Emma-Elena", img: "Emma.jpg" },
-                { name: "Nacu Andrei-Emilian", img: "Nacu.jpg" },
-                { name: "Stoian Cosmin-Ionuț", img: "Cosmin.jpg" },
-                { name: "Strat Bogdan-Valentin", img: "Bogdan.jpg" },
+                { name: "Bina Mircea Marian", img: "images/Mircea.jpg" },
+                { name: "Cobzariu Emma-Elena", img: "images/Emma.jpg" },
+                { name: "Nacu Andrei-Emilian", img: "images/Nacu.jpg" },
+                { name: "Stoian Cosmin-Ionuț", img: "images/Cosmin.jpg" },
+                { name: "Strat Bogdan-Valentin", img: "images/Bogdan.jpg" },
               ].map((member, index) => (
                 <Box
                   key={index}
